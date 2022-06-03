@@ -19,4 +19,4 @@ git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 cd Adafruit_Python_SSD1306
 sudo python3 setup.py install
 cd ..
-curl -Ss https://raw.githubusercontent.com/thomas345/carcharging-public/main/stats.py
+curl -LJO https://raw.githubusercontent.com/thomas345/carcharging-public/main/stats.py
