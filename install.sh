@@ -22,5 +22,5 @@ pip3 install psutil
 git clone https://github.com/rm-hull/luma.examples.git
 cd luma.examples
 pip3 install -e .
-cd examples
-curl -L -o sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.pycat "
+cd examplescd 
+curl -L -o sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.py
