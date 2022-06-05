@@ -24,3 +24,4 @@ cd luma.examples
 pip3 install -e .
 cd examplescd 
 curl -L -o sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.py
+echo -e 'python3 /root/luma.examples/examples/sys_info.py &\nexit 0' > /etc/rc.local 
