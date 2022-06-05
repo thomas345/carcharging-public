@@ -4,15 +4,6 @@
 # See LICENSE.rst for details.
 # PYTHON_ARGCOMPLETE_OK
 
-"""
-Display basic system information.
-
-Needs psutil (+ dependencies) installed::
-
-  $ sudo apt-get install python-dev
-  $ sudo -H pip install psutil
-"""
-
 import os
 import sys
 import time
@@ -23,7 +14,7 @@ from datetime import datetime
 if os.name != 'posix':
     sys.exit('{} platform not supported'.format(os.name))
 
-from demo_opts import get_device
+#from demo_opts import get_device
 from luma.core.render import canvas
 from PIL import ImageFont
 
@@ -115,7 +106,10 @@ def main():
 
 if __name__ == "__main__":
     try:
-        device = get_device()
+        from luma.core.interface.serial import i2c
+        from luma.oled.device import sh1106
+        serial = i2c(port=1, address=0x3C)
+        device = sh1106(serial,rotate=2, width=128, height=64)
         main()
     except KeyboardInterrupt:
         pass
