@@ -77,6 +77,7 @@ def stats(device):
     # use custom font
     font_path = str(Path(__file__).resolve().parent.joinpath('fonts', 'C&C Red Alert [INET].ttf'))
     font2 = ImageFont.truetype(font_path, 12)
+    font3 = ImageFont.truetype(font_path, 18)
 
     with canvas(device) as draw:
         draw.text((0, 0), cpu_usage(), font=font2, fill="white")
@@ -89,14 +90,7 @@ def stats(device):
         if device.height >= 64: 
             cmd = "hostname -I |cut -d\' \' -f1"
             IP = subprocess.check_output(cmd, shell = True )    
-            draw.text((0, 38), "IP: " + str(IP,'utf-8'),  font=font2, fill=255)
-#            
-#           try:
-#                draw.text((0, 38), network('wlan0'), font=font2, fill="white")
-#            except KeyError:
-#                # no wifi enabled/available
-#                pass
-
+            draw.text((0, 45), "IP: " + str(IP,'utf-8'),  font=font3, fill=255)
 
 def main():
     while True:
