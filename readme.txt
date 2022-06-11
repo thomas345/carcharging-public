@@ -1,5 +1,5 @@
 Load latest image to SD via Raspberry Pi Imager
-Touch /boot/ssh file: touch /media/tbp/boot/ssh
+Touch /boot/ssh file
 Login as pi with password 'raspberry'
 Creat user with adduser
 Run script: curl -Ss https://raw.githubusercontent.com/thomas345/carcharging-public/main/install.sh | bash
