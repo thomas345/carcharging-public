@@ -1,9 +1,9 @@
 #!/bin/bash
-#if [ `whoami` != 'root' ]
-#  then
-#    echo "You must be root to do this."
-#    exit
-#fi
+if [ `whoami` = 'root' ]
+  then
+    echo "You must NOT be root to run this script."
+    exit
+fi
 sudo raspi-config nonint do_i2c 0
 sudo raspi-config nonint do_ssh 0
 sudo apt update
@@ -16,5 +16,6 @@ sudo usermod -a -G spi,gpio,i2c $USER
 sudo pip3 install psutil
 curl -L -o /home/$USER/sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.py
 curl -L -o /home/$USER/FreePixel.ttf https://raw.githubusercontent.com/thomas345/carcharging-public/main/FreePixel.ttf
-echo -e '#!/bin/sh\npython3 /home/$USER/sys_info.py &\nexit 0' > /etc/rc.local 
+sudo echo -e '#!/bin/sh\npython3 /home/$USER/sys_info.py &\nexit 0' > /etc/rc.local 
 #reboot
+echo "Please reboot for changes to take effect"
