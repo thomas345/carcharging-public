@@ -9,6 +9,7 @@ device = sh1106(serial, rotate=2)
 import os
 import sys
 import time
+import RPi.GPIO as GPIO 
 import subprocess
 from pathlib import Path
 from datetime import datetime
@@ -17,6 +18,22 @@ if os.name != 'posix':
     sys.exit(f'{os.name} platform is not supported')
 
 from PIL import ImageFont
+
+GPIO.setmode(GPIO.BCM)  
+GPIO.setup(17, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+
+def Shutdown(channel):  
+    time.sleep(2)
+    if GPIO.input(17) == GPIO.LOW:
+      #print('Please wait while the program is loading...') 
+      device.clear()
+      os.system("sudo shutdown -h now")
+      #device.clear()
+      #sys.exit()
+
+GPIO.add_event_detect(17, GPIO.FALLING, callback = Shutdown, bouncetime = 2000)
+
+
 
 try:
     import psutil
