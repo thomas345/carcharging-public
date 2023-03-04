@@ -16,6 +16,8 @@ sudo usermod -a -G spi,gpio,i2c $USER
 sudo pip3 install psutil
 curl -L -o /home/$USER/sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.py
 curl -L -o /home/$USER/FreePixel.ttf https://raw.githubusercontent.com/thomas345/carcharging-public/main/FreePixel.ttf
-sudo echo -e '#!/bin/sh\npython3 /home/$USER/sys_info.py &\nexit 0' > /etc/rc.local 
+sudo su
+echo -e '#!/bin/sh\npython3 /home/$USER/sys_info.py &\nexit 0' > /etc/rc.local 
+exit
 #reboot
 echo "Please reboot for changes to take effect"
