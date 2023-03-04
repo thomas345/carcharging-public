@@ -14,8 +14,8 @@ sudo -H pip3 install luma.oled
 sudo usermod -a -G spi,gpio,i2c $USER
 #pip3 install --upgrade --force-reinstall luma.oled
 sudo pip3 install psutil
-curl -L -o /home/$USER/sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.py
-curl -L -o /home/$USER/FreePixel.ttf https://raw.githubusercontent.com/thomas345/carcharging-public/main/FreePixel.ttf
+curl -L -o /home/$USER/sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.py?$RANDOM
+curl -L -o /home/$USER/FreePixel.ttf https://raw.githubusercontent.com/thomas345/carcharging-public/main/FreePixel.ttf?$RANDOM
 sudo su
 echo -e '#!/bin/sh\npython3 /home/$USER/sys_info.py &\nexit 0' > /etc/rc.local 
 exit
