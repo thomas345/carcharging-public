@@ -17,6 +17,7 @@ sudo pip3 install psutil
 curl -L -o /home/$USER/sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.py?$RANDOM
 curl -L -o /home/$USER/FreePixel.ttf https://raw.githubusercontent.com/thomas345/carcharging-public/main/FreePixel.ttf?$RANDOM
 sudo su
+echo dtparam=act_led_gpio=27 >> /boot/config.txt
 echo -e '#!/bin/sh\npython3 /home/$USER/sys_info.py &\nexit 0' > /etc/rc.local 
 exit
 #reboot
