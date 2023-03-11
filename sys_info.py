@@ -55,7 +55,7 @@ def stats(device):
     with canvas(device) as draw:
             cmd = "hostname"
             HN = subprocess.check_output(cmd, shell = True )
-            draw.text((0, 0), str(HN, 'utf-8'),font=font3,  fill=255)
+            draw.text((0, 10), str(HN, 'utf-8'),font=font3,  fill=255)
 
             draw.text((0, 32), disk_usage('/'), font=font3, fill="white")
         
