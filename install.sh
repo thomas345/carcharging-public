@@ -9,7 +9,7 @@ sudo raspi-config nonint do_ssh 0
 sudo apt update
 sudo apt -y dist-upgrade
 sudo apt-get update
-sudo apt-get install python3 python3-pip python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 -y
+sudo apt-get install vim python3 python3-pip python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 -y
 sudo -H pip3 install luma.oled
 sudo usermod -a -G spi,gpio,i2c $USER
 #pip3 install --upgrade --force-reinstall luma.oled
