@@ -10,7 +10,8 @@ sudo apt update
 sudo apt -y dist-upgrade
 sudo apt-get update
 sudo apt-get install vim python3 python3-pip python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 -y
-sudo -H pip3 install luma.oled
+#sudo -H pip3 install luma.oled 
+sudo -H pip3 install luma.oled --break-system-packages
 sudo usermod -a -G spi,gpio,i2c $USER
 #pip3 install --upgrade --force-reinstall luma.oled
 sudo pip3 install psutil
