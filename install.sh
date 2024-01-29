@@ -10,11 +10,12 @@ sudo apt update
 sudo apt -y dist-upgrade
 sudo apt-get update
 sudo apt-get install vim python3 python3-pip python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 -y
-#sudo -H pip3 install luma.oled 
-sudo -H pip3 install luma.oled #--break-system-packages
+sudo -H pip3 install luma.oled 
+sudo -H pip3 install luma.oled --break-system-packages
 sudo usermod -a -G spi,gpio,i2c $USER
 #pip3 install --upgrade --force-reinstall luma.oled
-sudo pip3 install psutil #--break-system-packages
+sudo pip3 install psutil --break-system-packages
+sudo apt install python3-psutil
 curl -L -o /home/$USER/sys_info.py https://raw.githubusercontent.com/thomas345/carcharging-public/main/sys_info.py?$RANDOM
 curl -L -o /home/$USER/FreePixel.ttf https://raw.githubusercontent.com/thomas345/carcharging-public/main/FreePixel.ttf?$RANDOM
 #echo -e '#!/bin/sh\npython3 /home/'$USER'/sys_info.py &\nexit 0' | sudo tee /etc/rc.local
